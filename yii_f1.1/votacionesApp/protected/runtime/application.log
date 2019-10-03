@@ -27,3 +27,12 @@ Stack trace:
 #24 {main}
 REQUEST_URI=/yiiVotaciones/yii_f1.1/votacionesApp/index.php/site/login
 ---
+2019/10/04 00:41:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "usuario/login".' in C:\xampp\htdocs\yiiVotaciones\yii_f1.1\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yiiVotaciones\yii_f1.1\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/login')
+#1 C:\xampp\htdocs\yiiVotaciones\yii_f1.1\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yiiVotaciones\yii_f1.1\votacionesApp\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiiVotaciones/yii_f1.1/votacionesApp/index.php/usuario/login
+HTTP_REFERER=http://localhost/yiiVotaciones/yii_f1.1/votacionesApp/index.php
+---
