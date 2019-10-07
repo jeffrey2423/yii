@@ -31,7 +31,6 @@ class VotacionesController extends Controller
 	public function actionLogin()
 	{
 		$model = new VotacionesUsuarioLogin;
-		Yii::app()->session['login'] = null;
 
 		if (isset($_POST['VotacionesUsuarioLogin'])) {
 			$model->attributes = $_POST['VotacionesUsuarioLogin'];
@@ -42,7 +41,6 @@ class VotacionesController extends Controller
 						echo 'vista admin';
 						break;
 					case 'vista.votante':
-						Yii::app()->session['login'] = $model->attributes;
 						$this->redirect(Yii::app()->request->baseUrl . "/votante/index");
 
 						break;

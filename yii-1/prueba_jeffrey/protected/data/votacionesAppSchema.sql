@@ -91,8 +91,9 @@ select A.id_user, A.nombre, A.apellido, A.usuario, A.clave, B.id_rol, D.nombre a
 /*consulta para obtener el usuario y el rol de quien inicia sesion con parametro*/
 
 select A.id_user, A.nombre, A.apellido, A.usuario, A.clave, B.id_rol, D.nombre as nombre_rol, C.id_permiso, C.nombre as nombre_permiso, C.descripcion as desc_permiso from
-
 (votaciones_usuario as A inner join votaciones_usuario_extendido as B on A.id_user = B.id_user
 inner join votaciones_permisos as C on B.id_rol = C.rol inner join votaciones_roles as D on C.rol = D.id_rol)
-
 where A.usuario = 'prueba';
+
+ALTER TABLE `votaciones_usuario_extendido` ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`);
+ALTER TABLE `votaciones_votos` ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`);

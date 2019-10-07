@@ -18,7 +18,7 @@ $this->breadcrumbs = array(
               <p class="card-text"><?= $data["tipo"] ?></p>
             </div>
             <div class="card-footer">
-              <?php echo CHtml::link('Votar', array('edit'), array('class' => 'btn btn-block btn-success')); ?>
+            <?php echo CHtml::link('Votar', array('votar', 'id'=>$data['id_candidato']),array("confirm"=>"¿Desea efectuar el voto? Solo podra votar una vez",'class'=> 'btn btn-success'));?>
             </div>
           </div>
         <?php endforeach ?>

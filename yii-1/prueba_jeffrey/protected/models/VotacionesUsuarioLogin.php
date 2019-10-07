@@ -67,6 +67,8 @@ class VotacionesUsuarioLogin extends CActiveRecord
 
 	public function validarLogin($user, $pass)
 	{
+		Yii::app()->session['admin'] = null;
+		Yii::app()->session['votante'] = null;
 		$tipo = "";
 		/*$criterial = new CDbCriteria();
 		$criterial->select = "t.*, D.nombre as nombre_rol, C.id_permiso, C.nombre as nombre_permiso, C.descripcion as desc_permiso";
@@ -88,9 +90,11 @@ class VotacionesUsuarioLogin extends CActiveRecord
 		if ($resultquery) {
 			switch ($resultquery[0]['nombre_rol']) {
 				case 'admin':
+					Yii::app()->session['admin'] = $resultquery[0];
 					$tipo = "vista.admin";
 					break;
 				case 'votante':
+				Yii::app()->session['votante'] = $resultquery[0];
 					$tipo = "vista.votante";
 					break;
 			}

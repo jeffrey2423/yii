@@ -282,3 +282,5 @@ ADD CONSTRAINT `FK_candidato` FOREIGN KEY (`id_candidato`) REFERENCES `votacione
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `votaciones_roles` (`id_rol`, `nombre`, `descripcion`, `fecha_creacion`) VALUES (NULL, 'admin', 'administrador del sitio', current_timestamp()), (NULL, 'votante', 'podra afectuar el voto', current_timestamp());

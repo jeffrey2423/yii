@@ -29,13 +29,14 @@
 				<div class="nav-collapse collapse">
 					<?php $this->widget('zii.widgets.CMenu', array(
 						'items' => array(
-							array('label' => 'Registro', 'url' => array('/votaciones/index'),'visible' => (Yii::app()->session['login'] !== null ? false : true)),
-							array('label' => 'Login', 'url' => array('/votaciones/login'),'visible' => (Yii::app()->session['login'] !== null ? false : true)),
-							/*array('label' => 'Gestion de empleados', 'url' => array('/usuario/manager'), 'visible' => (Yii::app()->session['login']['perfil'] === '1' ? true : false)),
-							array('label' => 'Gestión de areas', 'url' => array('/area/index'), 'visible' => (Yii::app()->session['login']['perfil'] === '1' ? true : false)),
+							array('label' => 'Registro', 'url' => array('/votaciones/index'),'visible' => (Yii::app()->session['admin'] !== null || Yii::app()->session['votante'] !== null ? false : true)),
+							array('label' => 'Login', 'url' => array('/votaciones/login'),'visible' => (Yii::app()->session['admin'] !== null || Yii::app()->session['votante'] !== null ? false : true)),
+							array('label' => 'Gestion de candidatos', 'url' => array('/admin/candidatos'), 'visible' => (Yii::app()->session['admin'] !== null ? true : false)),
+							/*array('label' => 'Gestión de areas', 'url' => array('/area/index'), 'visible' => (Yii::app()->session['login']['perfil'] === '1' ? true : false)),
 							array('label' => 'Gestión de empresas', 'url' => array('/empresa/index'), 'visible' => (Yii::app()->session['login']['perfil'] === '1' ? true : false)),
 							array('label' => 'Gestión de actividades', 'url' => array('/actividad/create'), 'visible' => (Yii::app()->session['login']['perfil'] === '1' ? true : false)),*/
-							array('label' => 'Logout ID:(' . Yii::app()->session['login']['usuario'] . ')', 'url' => array('/site/logout'), 'visible' => (Yii::app()->session['login'] !== null ? true : false))
+							array('label' => 'Logout ID:(' . Yii::app()->session['admin']['usuario'] . ')', 'url' => array('/site/logout'), 'visible' => (Yii::app()->session['admin'] !== null ? true : false)),
+							array('label' => 'Logout ID:(' . Yii::app()->session['votante']['usuario'] . ')', 'url' => array('/site/logout'), 'visible' => (Yii::app()->session['votante'] !== null ? true : false))
 						),
 						'htmlOptions' => array('class' => 'nav navbar-nav')
 					)); ?>

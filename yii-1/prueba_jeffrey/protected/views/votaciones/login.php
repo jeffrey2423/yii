@@ -27,7 +27,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'clave'); ?>
-		<?php echo $form->textField($model,'clave'); ?>
+		<?php echo $form->passwordField($model,'clave'); ?>
 		<?php echo $form->error($model,'clave'); ?>
 	</div>
 
